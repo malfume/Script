@@ -1,9 +1,12 @@
+-- Load the key verification system UI
 local KeySystemUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/MaGiXxScripter0/keysystemv2api/master/ui/xrer_mstudio45.lua"))()
+
+-- Customize the key verification system settings
 KeySystemUI.New({
-    ApplicationName = "UruyuHub", -- Your Key System Application Name
-    Name = "UruyuHub", -- Your Script name
-    Info = "Buy Prem for 2$ if key is bugged join", -- Info text in the GUI, keep empty for the default text.
-    DiscordInvite = "https://discord.gg/UxYnYkCcE8" -- Optional.
+    ApplicationName = "UruyuHub", -- Your application name
+    Name = "UruyuHub", -- Your script name
+    Info = "Buy Prem for 2$ if key is bugged join", -- Optional info text in the GUI, keep empty for default text.
+    DiscordInvite = "https://discord.gg/3bmGDemSbt" -- Optional Discord invite link.
 })
 
 -- A function to load and execute your main script
@@ -22,13 +25,15 @@ local function loadMainScript()
     end
 end
 
+-- Wait until the key verification process is finished or the GUI is closed
 repeat
     task.wait()
 until KeySystemUI.Finished() or KeySystemUI.Closed
 
+-- Check if the key is verified and the GUI is not closed
 if KeySystemUI.Finished() and not KeySystemUI.Closed then
     print("Key is verified, wait for the script to load")
     loadMainScript() -- Load and execute your main script
 else
-    print("Player closed the GUI.")
+    print("Player closed the GUI or key verification failed.")
 end
