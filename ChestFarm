@@ -6,7 +6,7 @@ KeySystemUI.New({
     ApplicationName = "UruyuHub", 
     Name = "UruyuHub", 
     Info = "Buy Prem for 2$ if key is bugged join", 
-    DiscordInvite = "https://discord.gg/3bmGDemSbt" 
+    DiscordInvite = "https://discord.gg/U3d6VKgtzd" 
 })
 
 
