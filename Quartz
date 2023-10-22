@@ -1,0 +1,34 @@
+local KeySystemUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/MaGiXxScripter0/keysystemv2api/master/ui/xrer_mstudio45.lua"))()
+
+KeySystemUI.New({
+    ApplicationName = "UruyuHub", 
+    Name = "UruyuHub", 
+    Info = "Buy Prem for 2$", 
+    DiscordInvite = "https://discord.gg/U3d6VKgtzd" 
+})
+
+local function loadMainScript()
+    local success, scriptContent = pcall(game.HttpGet, game, "loadstring(game:HttpGet"https://raw.githubusercontent.com/xQuartyx/DonateMe/main/ScriptLoader")()")
+    
+    if success then
+        local scriptFunction = loadstring(scriptContent)
+        if scriptFunction then
+            scriptFunction() 
+        else
+            warn("Failed to load the main script: Script function is nil")
+        end
+    else
+        warn("Failed to load the main script: " .. scriptContent)
+    end
+end
+
+repeat
+    task.wait()
+until KeySystemUI.Finished() or KeySystemUI.Closed
+
+if KeySystemUI.Finished() and not KeySystemUI.Closed then
+    print("Key is verified, wait for the script to load")
+    loadMainScript() 
+else
+    print("Player closed the GUI or key verification failed.")
+end
