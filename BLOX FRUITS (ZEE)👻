@@ -1,11 +1,11 @@
 local KeySystemUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/MaGiXxScripter0/keysystemv2api/master/ui/xrer_mstudio45.lua"))()
-
 KeySystemUI.New({
     ApplicationName = "UruyuHub", 
     Name = "UruyuHub", 
-    Info = "Buy Prem for 2$", 
+    Info = "Buy Prem for 2$ if key is bugged join", 
     DiscordInvite = "https://discord.gg/FyzqseR4g5" 
 })
+
 
 local function loadMainScript()
     local success, scriptContent = pcall(game.HttpGet, game, "loadstring(game:HttpGet("https://link.trwxz.com/LS-Zee-Hub-VIP"))()")
@@ -30,5 +30,5 @@ if KeySystemUI.Finished() and not KeySystemUI.Closed then
     print("Key is verified, wait for the script to load")
     loadMainScript() 
 else
-    print("Player closed the GUI or key verification failed.")
+    print("Player closed the GUI.")
 end
