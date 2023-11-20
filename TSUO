@@ -6,7 +6,7 @@ KeySystemUI.New({
   ApplicationName = "UruyuHub",
   Name = "UruyuHub",
   Info = "Buy Prem for 2$",
-  DiscordInvite = "https://discord.gg/Fyzqse4g5"
+  DiscordInvite = "https://discord.gg/g4rQJYSde6"
 })
 
 
