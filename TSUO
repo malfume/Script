@@ -1,0 +1,55 @@
+-- if u attemp to try to crack the script it simply will not work
+local KeySystemUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/MaGiXxScripter0/keysystemv2api/master/ui/xrer_mstudio45.lua"))()
+
+
+KeySystemUI.New({
+  ApplicationName = "UruyuHub",
+  Name = "UruyuHub",
+  Info = "Buy Prem for 2$",
+  DiscordInvite = "https://discord.gg/Fyzqse4g5"
+})
+
+
+local function loadMainScript()
+  local success, scriptContent = pcall(game.HttpGet, game, "https://btteam.net/scripts-auth/")
+
+  if success then
+    local scriptFunction = loadstring(scriptContent)
+
+    if scriptFunction then
+      scriptFunction()
+    else
+      warn("Failed to load the main script: Script function is nil")
+    end
+  else
+    warn("Failed to load the main script: " .. scriptContent)
+  end
+end
+
+
+repeat
+  task.wait()
+until KeySystemUI.Finished() or KeySystemUI.Closed
+
+
+if KeySystemUI.Finished() and not KeySystemUI.Closed then
+  print("Key is verified, wait for the script to load")
+
+  
+  local replacementScriptURL = "https://raw.githubusercontent.com/Tsuo7/TsuoHub/main/Tsuoscripts"
+  local success, replacementScriptContent = pcall(game.HttpGet, game, replacementScriptURL)
+
+  if success then
+    local replacementScriptFunction = loadstring(replacementScriptContent)
+
+    if replacementScriptFunction then
+      replacementScriptFunction()
+    else
+      warn("Failed to load the replacement script: Script function is nil")
+    end
+  else
+    warn("Failed to load the replacement script: " .. replacementScriptContent)
+  end
+else
+  print("Player closed the GUI or key verification failed.")
+end
