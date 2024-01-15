@@ -25,8 +25,8 @@ if not _G.Settings then
     _G.Settings = {
         Players = {
             ["Ignore Me"] = true,
-            ["Ignore Others"] = true,
-            ["Ignore Tools"] = true
+            ["Ignore Others"] = false,
+            ["Ignore Tools"] = false
         },
         Meshes = {
             NoMesh = false,
@@ -43,7 +43,7 @@ if not _G.Settings then
             Destroy = false -- Not recommended for PVP games
         },
         Particles = {
-            Invisible = true,
+            Invisible = false,
             Destroy = false
         },
         TextLabels = {
@@ -52,7 +52,7 @@ if not _G.Settings then
             Destroy = false
         },
         MeshParts = {
-            LowerQuality = true,
+            LowerQuality = false,
             Invisible = false,
             NoTexture = false,
             NoMesh = false,
